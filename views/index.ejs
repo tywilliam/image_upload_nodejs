@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Node File Uploads</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css" rel='stylesheet'/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>File Uploads</h1>
+        <%= typeof msg!= 'undefined' ? msg : ''; %>
+        <form enctype="multipart/form-data" action="/upload" method='POST'>
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>File</span>
+                    <input type="file" name="myImage">
+                </div>
+                <div class="file-path-wrapper">
+                    <input type="text" class="file-path validate">
+                </div>
+            </div>
+            <input type="submit" class="btn"/>
+        </form>
+    </div>
+    <br>
+    <img src="<%= typeof file != 'undefined' ? msg : '' %>" class="img-responsive">
+</body>
+</html>
